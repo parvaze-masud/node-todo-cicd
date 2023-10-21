@@ -1,6 +1,7 @@
 FROM node:12.2.0-alpine
-WORKDIR app
-COPY . .
+WORKDIR /app
+COPY . /app
+RUN apk update && apk add bash
 RUN npm install
 RUN npm run test
 EXPOSE 8000
